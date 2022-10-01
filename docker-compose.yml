@@ -19,6 +19,16 @@ services:
     volumes:
       - ./frontend:/app
 
+  deck-builder:
+    container_name: arkham-collection_deck-builder
+    build: deck-builder
+    stdin_open: true
+    ports:
+      - 3001:3001
+      - 3010:3010
+    volumes:
+      - ./deck-builder:/app
+
   postgres:
     container_name: arkham-collection_postgres
     image: postgres:13-alpine

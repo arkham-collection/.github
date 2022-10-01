@@ -19,7 +19,7 @@ build:
 	docker-compose build
 
 shell:
-	docker-compose exec $(service) sh
+	docker-compose run --rm --no-deps $(service) sh
 
 psql:
 	docker-compose exec postgres sh -c "su - postgres -c 'psql $(db)'"
